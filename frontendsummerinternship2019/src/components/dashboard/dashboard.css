@@ -1,0 +1,126 @@
+#dashboard-page {
+    position: relative;
+    height: 100%;
+    padding: 0 1em;
+    margin: 0px auto !important;
+    background: url("/public/img/blue_depths_by_lukasfractalizator_dbg7130.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#dashboard-page::before {
+    content: '';
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    background-color: black;
+
+    opacity: 0.35;
+}
+
+#dashboard-page .spinner-grow{
+    width: 3em;
+    height: 3em;
+}
+
+#menu {
+    padding-top: 2em;
+    color: white;
+}
+
+#menu h3 {
+    margin-bottom: 1em;
+}
+
+#game-catalog {
+    padding-top: 2em;
+}
+
+.game-icon {
+    max-width: calc(15em + 4px);
+}
+
+.game-icon a {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.game-thumbnail::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0;
+    left:0;
+    
+    background: black;
+    clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+
+    opacity: 0;
+    transition: all .3s ease-in-out;
+    z-index: 8;
+}
+
+.game-thumbnail:hover:before {
+    opacity: 0.5;
+    
+    height: 100%;
+}
+
+.game-icon .game-name {
+    position: absolute;
+    top: 50%;
+    left: 1em;
+    width: calc(100% - 2em);
+
+    text-shadow: 1px 1px 4px black;
+
+    transform: translateY(-50%);
+    z-index: 9;
+}
+
+.game-icon .game-name h4 {
+    word-wrap: break-all;
+    white-space: normal;
+    margin-bottom: 0px;
+    color: white;
+}
+
+.game-thumbnail-border {
+    position: relative;
+    width: calc(15em + 4px);
+    height: calc(15em + 4px);
+
+    background: white;
+    clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+    z-index: 9;
+}
+
+.game-thumbnail {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+
+    clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 10;
+}
+
+.no-games-text {
+    color:white;
+}
+
+@media only screen and (max-width: 768px) {
+
+}

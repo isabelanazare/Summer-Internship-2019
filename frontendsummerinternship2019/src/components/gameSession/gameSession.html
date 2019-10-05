@@ -1,0 +1,39 @@
+<div id = "game-session" class="container">      
+    {{#if state.isDataLoading}}
+        <div class = "loading-overlay text-center">
+            <div class = "loader-container">
+                <div class="spinner-grow text-primary"></div>
+            </div>
+        </div>
+    {{else}}
+        {{#if state.gameData}}
+            <div
+                class = "show_chat"
+                @animate = "toggleShowChat"
+                @click = "showChat()"
+            >
+                <i class="material-icons show_chat_icon">
+                    chevron_left
+                </i>
+            </div>
+            <div @animate="toggleGameWindow" class="game_wrapper">
+                {{{renderComponent 'Game' params=(gameProps) }}}
+            </div>
+
+            <div
+                @animate="toggleActiveChat" class="chat_wrapper">
+                {{{renderComponent 'Chat' params=state.toggleChatOpen}}}
+            </div>
+
+            <div 
+                id = "mobile-chat-toggle"
+                @click = "showChat()"
+            >
+                <i class="material-icons">chat</i>
+            </div>
+        {{else}}
+            <h4 id = "no-game-text" class = "text-center">No game was found</h4>
+        {{/if}}
+    
+    {{/if}}
+</div>

@@ -1,0 +1,12 @@
+<div class = "player">
+    <p class = "player-name text-center">{{username}}</p>
+    <div class = "player-lives text-center">
+        {{#each lives}}
+            <span class = {{this.className}}>
+                <i class="material-icons">
+                    {{this.iconName}}
+                </i>
+            </span>
+        {{/each}}
+    </div>
+</div>

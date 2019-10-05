@@ -1,0 +1,22 @@
+body {
+    padding: 1em;
+    /* color: white;
+    background:  var(--gray-dark); */
+}
+
+.names-list {
+    /* color: var(--gray-dark); */
+}
+
+.row {
+    margin-bottom: 1em;
+}
+input {
+    margin-left: 0;
+    transition: all .3s ease-in-out;
+}
+
+.SlideRight {
+    margin-left: 60px;
+    transition: all .3s ease-in-out;
+}

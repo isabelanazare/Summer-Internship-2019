@@ -1,0 +1,38 @@
+<div id = "hangman-menu">
+    <i class="material-icons toggler">
+        menu
+    </i>
+    
+    <div class = "content">
+        <div class = "container-fluid">
+            <div class = "row">
+                <div class = "col-12 text-center">
+                    <button 
+                        type="button" class="btn btn-outline-info"
+                        @click = "getInviteLinkClickHandler()"
+                    >
+                        <i class="material-icons">
+                            link
+                        </i>
+                        <span>Get invite link</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class = "row" >
+                <div class = "col-12 text-center">
+                    <button 
+                        type="button" class="btn btn-outline-danger"
+                        @click = "disconnectClickHandler()"
+                    >
+                        <i class="material-icons">
+                            exit_to_app
+                        </i>
+                        Leave Room
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

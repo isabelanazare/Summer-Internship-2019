@@ -1,0 +1,13 @@
+<div
+    @observable = "alert-container"
+    class = "alert-container"
+>
+    <div class = "{{alertClasses state.alertType}}">
+        <button type="button" class="close"
+            @click = "close()"
+        >
+            &times;
+        </button>
+        {{state.message}}
+      </div>
+</div>

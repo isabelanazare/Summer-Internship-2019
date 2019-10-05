@@ -1,0 +1,13 @@
+<div id="messages_wrapper">
+   {{#each state.messages}}
+    <p class="{{getMessageSender this.sender}}">
+         <span>
+             <i>
+                 {{this.sender}}
+                </i>
+        </span>
+        {{this.message}}
+    </p>
+    {{/each}}
+</div>
+

@@ -1,0 +1,51 @@
+<div class = "container-fluid" id = "dashboard-page">
+    <div class = "row">
+        <div class = "col-12 col-md-4 col-xl-3 text-center" id = "menu">
+            <h3>Hello, {{props.auth.userData.username}}!</h3>
+            <button 
+                id = "logout-button"
+                class = "btn btn-danger btn-lg"
+                @click = "logOut()"
+            >
+                Log out
+            </button>
+        </div>
+
+        <div class = "col-12 col-md-8 col-xl-9" id = "game-catalog">
+            <div class = "row justify-content-center" >
+                {{#if state.games}}
+                    {{#each state.games}}
+                        <div class = "game-icon">
+                            <div class = "game-thumbnail-border">
+                                <a class = "text-center" href = "#/games/{{this.id}}" >
+                                    <div
+                                        class = "game-thumbnail"
+                                        style = "background-image: url('{{imageUrl this.id }}')"
+                                    >
+                                        <div class = "game-name">
+                                            
+                                            <h4 class = "text-center">{{this.name}}</h4>
+                                            
+                                        </div>                
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    {{/each}}
+                    {{else}}
+                        {{#if state.isloadingGames}}
+                            <div class = "loading-overlay">
+                                <div class = "loader-container">
+                                    <div class="spinner-grow text-primary"></div>
+                                </div>
+                            </div>
+                            {{else}}
+                            <h4 class = "no-games-text">
+                                We're sorry, there are no available games at the moment.
+                            </h4>
+                        {{/if}}
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div>

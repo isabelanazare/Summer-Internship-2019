@@ -1,0 +1,228 @@
+<svg id="hangman-illustration" viewBox = "0 0 400 600">
+	<style>
+		@keyframes hangerBarAnimation {
+			0% {
+				transform: skewY(0);
+			}
+
+			60% {
+				transform: skewY(8deg);
+			}
+
+			100% {
+				transform: skewY(0);
+			}
+		}
+
+		@keyframes hangerEndAnimation {
+			0% {
+				transform: translateY(0);
+			}
+			
+			60% {
+				transform: translateY(30px) scaleY(2);
+			}
+
+			100% {
+				transform: translateY(0);
+			}
+		}
+
+		@keyframes hangerEndSwing {
+			100% {
+				transform: scaleY(2);
+			}
+		}
+
+		@keyframes mouthAnimation {
+			100% {
+				d: path("M 233 227 Q 251 227 266 228");
+			}
+		}
+		
+		@keyframes eyesIrisAnimation {
+			60% {
+				transform: translate(0px, 0px);
+			}
+
+			100% {
+				transform: translate(0px, -62px);
+			}
+		}
+
+		@keyframes bodyAnimation {
+			0% {
+				transform: translate(0px, 0px);
+			}
+			
+			60% {
+				transform: translate(0px, 0px);
+			}
+
+			100% {
+				transform: translate(0px, -62px);
+			}
+		}
+		
+		@keyframes bodySwing{
+
+			0% {
+				transform: translate(0px, -62px);
+			}
+
+			100% {
+				transform: translate(0px,  -30px);
+			}
+		}
+		
+		@keyframes rightArmAnimation {
+			100% {
+				d: path("M 276 266 Q 282 248 301 265 Q 319 313 319 400 Q 302 407 300 398 Q 300 328 280 271 z");
+			}
+		}
+
+		@keyframes leftArmAnimation {
+			100% {
+				d: path("M 203 267 Q 226 250 226 269 Q 191 384 192 402 Q 173 409 174 398 Q 190 312 203 267 z");
+			}
+		}
+		
+		@keyframes leftLegAnimation {
+
+			100% {
+				d: path("M 218 388 L 241 392 Q 231 461 226 542 Q 214 553 204 541 Q 211 452 216 407 z");
+			}
+		}
+
+		@keyframes rightLegAnimation {
+			100% {
+				d: path("M 261 393 L 283 385 Q 289 460 296 541 Q 287 552 275 546 Q 264 442 261 398 z");
+			}
+		}
+		
+		@keyframes eyelidsAnimation {
+			0% {
+				transform: translate(0px, -62px) scaleY(0);
+			}
+
+			100% {
+				transform: translate(0px, -62px) scaleY(1);
+			}
+		}
+		
+		#hanger-bar {
+			transform-box: fill-box;
+			transform-origin: left bottom;
+			animation: 1s cubic-bezier(.42, .06, 0, 1.02) 0s 1 normal forwards running hangerBarAnimation;	
+		}
+
+		#hanger-end {
+			transform-origin: left top;
+			transform-box: fill-box;
+			animation: 1s cubic-bezier(.42, .06, 0, 1.02) 0s 1 normal forwards running hangerEndAnimation,
+				0.4s ease-in-out 1s 4 alternate forwards running hangerEndSwing;	
+		}
+
+		.hangman-body {
+			fill: #333;
+			stroke: white;
+			stroke-width: 5px;
+		}
+
+		#mouth {
+			stroke-width: 3px;
+			animation: .3s linear .2s 1 normal forwards running mouthAnimation,
+				1s cubic-bezier(.42, .06, 0, 1.02) 0s 1 normal forwards running bodyAnimation,
+				0.4s ease-in-out 1s 4 alternate forwards running bodySwing;
+		}
+
+		#left-eye-filling, #right-eye-filling {
+			transform: translate(0px, -2px);
+			animation: 1s cubic-bezier(.42, .06, 0, 1.02) 0s 1 normal forwards running eyesIrisAnimation,
+				0.4s ease-in-out 1s 4 alternate forwards running bodySwing;
+		}
+
+		.hangman-body {
+			transform-box: fill-box;
+			animation: 1s cubic-bezier(.42, .06, 0, 1.02) 0s 1 normal forwards running bodyAnimation,
+				0.4s ease-in-out 1s 4 alternate forwards running bodySwing;	
+		}
+
+		#right-arm {
+			animation: 0.3s linear 2.6s 1 normal forwards running rightArmAnimation,
+				1s cubic-bezier(.42, .06, 0, 1.02) 0s 1 normal forwards running bodyAnimation,
+				0.4s ease-in-out 1s 4 alternate forwards running bodySwing;
+		}
+
+		#left-arm {
+			animation: 0.3s linear 2.6s 1 normal forwards running leftArmAnimation,
+				1s cubic-bezier(.42, .06, 0, 1.02) 0s 1 normal forwards running bodyAnimation,
+				0.4s ease-in-out 1s 4 alternate forwards running bodySwing;
+		}
+
+		#left-leg {
+			animation: 0.3s linear 2.6s 1 normal forwards running leftLegAnimation,
+				1s cubic-bezier(.42, .06, 0, 1.02) 0s 1 normal forwards running bodyAnimation,
+				0.4s ease-in-out 1s 4 alternate forwards running bodySwing;
+		}
+
+		#right-leg {
+			animation: 0.3s linear 2.6s 1 normal forwards running rightLegAnimation,
+				1s cubic-bezier(.42, .06, 0, 1.02) 0s 1 normal forwards running bodyAnimation,
+				0.4s ease-in-out 1s 4 alternate forwards running bodySwing;
+		}
+		
+		#right-eyelid, #left-eyelid {
+			stroke-width: 0px;
+			fill: black;
+			transform: translate(0px, -62px) scaleY(0);
+			animation: 0.2s linear 2.6s 1 normal forwards running eyelidsAnimation;
+		}
+	</style>
+	<path id = "base" d = "M 0 550 H 100 V 535 H 0 V 550 H 0" fill = "white"/>
+	
+	<path id = "pillar" d = "M 40 535 H 60 V 50 H 40 V 535" fill = "white" />
+	
+	<path id = "hanger-bar" d = "M 255 50 V 60 H 60 V 50 H 255 z" fill = "white"/>
+	<path id = "hanger-end" d = "M 245 55 H 255 V 105 H 245 z" fill = "white"/>
+
+	<path id = "head-contour" class = "hangman-body"  d = "M 251 169 A 40 40 0 1 0 252 169 z" />
+
+	<path id = "left-eye" class = "hangman-body" stroke-linecap="round" 
+		d = "M 224 202 Q 235 197 243 203 Q 234 211 224 202 z" 
+	/>
+	<circle id = "left-eye-filling" class = "hangman-body" cx = "233" cy = "203" r = "1.75" />
+	<path id = "left-eyelid" class = "hangman-body" stroke-linecap="round" 
+		d = "M 224 202 Q 235 197 243 203 Q 234 211 224 202 z" 
+	/>
+
+	<path id = "right-eye" class = "hangman-body" stroke-linecap="round" 
+		d = "M 257 202 Q 268 197 276 203 Q 267 211 257 202 z" 
+	/>
+	<circle id = "right-eye-filling" class = "hangman-body" cx = "266.5" cy = "203" r = "1.75" />
+	<path id = "right-eyelid" class = "hangman-body" stroke-linecap="round" 
+		d = "M 257 202 Q 268 197 276 203 Q 267 211 257 202 z" 
+	/>
+
+	<path id = "mouth" class = "hangman-body" stroke-linecap="round" d = "M 233 227 Q 261 215 266 228" />
+
+	<path id = "abdomen" class = "hangman-body"
+		d = "M 250 250 S 316 264 282 384 Q 252 395 219 387 Q 201 273 250 250 z"
+	/>
+
+	<path  id = "left-arm" class = "hangman-body" stroke-linejoin="round"
+		d = "M 203 267 Q 226 250 226 269 Q 182 355 177 399 Q 159 408 160 397 Q 176 310 203 267 z" 
+	/>
+
+	<path id = "right-arm" class = "hangman-body" stroke-linejoin="round" 
+		d = "M 278 266 Q 284 248 303 265 Q 325 308 324 400 Q 308 401 306 392 Q 309 305 280 271 z"
+	/>
+
+	<path id = "left-leg" class = "hangman-body" stroke-linejoin="round"
+			d = "M 218 388 L 241 392 Q 222 461 226 542 Q 214 553 204 541 Q 202 453 212 407 z" 
+	/>
+
+	<path id = "right-leg" class = "hangman-body" stroke-linejoin="round"
+		d = "M 261 393 L 283 385 Q 302 432 307 541 Q 300 551 288 545 Q 273 433 263 398 z" 
+	/>
+</svg>

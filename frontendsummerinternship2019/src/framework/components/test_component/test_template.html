@@ -1,0 +1,81 @@
+<div class="container">
+    <div class = "row">
+        <div class = "col-sm">
+            <h4>Hello, {{state.auth.userData.username}}!</h4>
+        </div>
+    </div>
+    <div class = "row">
+        <div class="col-sm">
+            <input 
+                @animate="SlideRight"
+                type = "text" class = "form-control" 
+                @observable = "currentName"
+                @keyup = "nameKeyupHandler()"
+            />
+        </div>
+        <div class="col-sm">
+            <input
+                type = "text" class = "form-control"
+                disabled
+                @observable = "nameCopy"
+            />
+        </div>
+        <div class = "col-sm">
+            <button 
+                type = "button" class = "btn btn-primary"
+                @click = "addName()"
+            >
+                Add Name
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            
+                {{#if state.names}}
+                    <ul class = "list-group names-list">
+                        {{#each state.names}}
+                            <li 
+                                class = "list-group-item"
+                                @click = "deleteName({{{json name=this}}})"
+                                @observable = {{this}}
+                            >{{this}}</li>
+                        {{/each}}
+                    </ul>
+                {{else}}
+                    <h5>You haven't added any names yet</h5>
+                {{/if}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class = "col-sm">
+            <div class="form-group">
+                <label for="name-select">Names List</label>
+                <select 
+                    class="form-control" id = "name-select"
+                    @change = "changeHandler()"
+                >
+                    {{#each state.names}}
+                        <option
+                            class = "list-group-item"
+                            @observable = {{this}}
+                            value = {{this}}
+                        >
+                            {{this}}
+                        </option>
+                    {{/each}}
+                </select>
+            </div>
+        </div>
+        <div class="col-sm">
+            <button 
+                type = "button" class = "btn btn-danger"
+                @click = "logOut()"
+            >
+                Log Out
+            </button>
+        </div>
+    </div>
+</div>
+{{{renderComponent "Alert1"}}}

@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap');
+.chat {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    user-select: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+.chat.active {
+    width: 100%;
+}
+.chat .header {
+    color: #7e80ae;
+    font-weight: 400;
+    letter-spacing: 2px;
+    padding: 2rem;
+    padding-top: 1.5rem;
+    text-align: center;
+    background: #252652;
+    height: 10%;
+    margin: 0;
+}
+.chat .header h4 {
+    padding-top: .5rem;
+}
+
+.hide_chat {
+    width: 3rem;
+    height: 3rem;
+    font-size: 3rem;
+    text-align: left;
+    border-radius: 50%;
+}
+
+.hide_chat:hover {
+    cursor: pointer;
+}
+
+.messages {
+    height: 80%;
+    width: 100%;
+    background: #151934;
+    padding: 0 .75rem;
+}
+
+.messages p {
+    max-width: 70%;
+    padding: 1rem;
+    border-radius: .5rem;
+    color: white;
+    margin: .35rem;
+}
+
+.messages p span {
+    font-size: .8rem;
+    display: block;
+    font-style: italic;
+    margin-bottom: .5rem;
+    text-align: right;
+}
+
+.messages p.me span {
+    display: none;
+}
+
+#messages_wrapper {
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.message p::after {
+    clear: both;
+}
+
+p.not_me {
+    float: left;
+    background: #7902F6;
+    margin-left: .2rem;    
+    margin-right: 60%;
+    text-align: left;
+}
+
+p.me {
+    float: right;
+    background: #2A2B58;
+    margin-right: .5rem;
+    margin-left: 60%;
+    text-align: right;
+}
+
+p.server {
+    float: left;
+    background: rgb(27, 27, 56);
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+}
+
+p.server span {
+    display: none;
+}
+
+.chat_footer {
+    position: relative;
+    height: 10%;
+    width: 100%;
+    background: #162D45;
+    padding: .75rem;
+}
+
+.chat_footer input {
+    height: 100%;
+    color: white;
+    border: none;
+    border-radius: .5rem;
+    padding: .4rem .8rem;
+    background: #17192E;
+}
+
+.chat_footer input:focus {
+    outline: none;
+}
+
+#send {
+    position: absolute;
+    left: 90%;
+    top: 50%;
+    background: #9730D4;
+    border-radius: 50%;
+    box-sizing: border-box;
+    padding: .75rem;
+    transform: translate(-50%, -50%);
+    color: white;
+    border: 1px solid transparent;
+    transition: border-color .3s;
+}
+
+#send:hover {
+    border-color: white;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar {
+    width: .1rem;
+  }
+
+
+  
+

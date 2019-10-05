@@ -1,0 +1,5 @@
+{{#if (isAuthorized )}}
+    {{redirect (getPreviousRoute ) }}
+{{else}}
+    {{{renderComponent "component" }}}
+{{/if}}

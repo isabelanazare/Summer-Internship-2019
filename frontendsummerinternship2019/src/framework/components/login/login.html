@@ -1,0 +1,27 @@
+<div class="container">
+    <div class = "row">
+        <div class = "col-sm">
+                <h4>Login page</h4>
+        </div>
+    </div>
+    <div class = "row">
+        <div class="col-sm">
+            <form @submit = "logIn">
+
+                <div class = "form-group">
+                    <label for="username">Username</label>
+                    <input
+                        type = "text" class = "form-control" id = "username"
+                        placeholder = "Enter your username"
+                        @observable = "username"
+                    />
+                </div>
+
+                <button type="submit" class="btn btn-dark btn-block">Log in</button>
+            </form>
+            
+        </div>
+    </div>
+</div>
+
+{{{renderComponent "Alert1"}}}

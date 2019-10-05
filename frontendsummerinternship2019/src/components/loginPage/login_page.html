@@ -1,0 +1,39 @@
+<div class = "container-fluid" id = "login-page">
+    <div class = "row justify-content-center">
+        <div class = "login-form-container col-12 col-md-9 col-lg-7 col-xl-5">
+            {{#if state.isLoading}}
+                <div class = "loading-overlay">
+                    <div class = "loader-container">
+                        <div class="spinner-grow text-primary"></div>
+                    </div>
+                </div>
+            {{/if}}
+            <h4 class = "text-center title">Welcome to EvoGames!</h4>
+            <form 
+                id = "login-form"
+                @submit = "handleFormSubmit"
+            >
+                <div class = "form-group">
+                    <div class="input-group input-group-lg">
+                        <input 
+                            type = "text"
+                            class = "form-control" 
+                            id = "login-username" 
+                            placeholder="Enter a user name"
+                            @observable = "username"
+                        />
+                    </div>
+                </div>
+                <div class = "text-center">
+                    <button type="submit" id = "sign-in-button"
+                        class="btn btn-dark btn-lg"
+                    >
+                        Sign in
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{{{renderComponent 'Alert'}}}

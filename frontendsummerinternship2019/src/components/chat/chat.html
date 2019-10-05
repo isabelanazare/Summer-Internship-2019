@@ -1,0 +1,26 @@
+<div class="chat">
+
+    <h3 class="header">
+        <div class="row my-row">
+            <i class="material-icons col-2 hide_chat" @click="hideChat()">
+                    chevron_right
+                    </i>
+
+            <h4 class="col-4 offset-sm-2">
+                    Chat
+            </h4>
+        </div>
+        
+    </h3>
+    <div class="messages">
+            {{{renderComponent "Messages"}}}
+    </div>
+
+    <div class="chat_footer">
+
+        <input @keyup="enterToSend()" id="message" type="text" class="col-10" placeholder="Type message..."/>
+        <i id="send" class="material-icons" @click="sendMessage()">
+                send
+                </i>
+    </div>
+</div>

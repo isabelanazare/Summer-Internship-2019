@@ -1,0 +1,125 @@
+#hangman-container {
+    position: relative;
+    padding-bottom: 3em;
+    min-height: 100vh;
+    background-color: #333;
+}
+
+#virtual-keyboard {
+    text-align: center;
+    font-size: 2em;
+    font-family: 'Permanent Marker', cursive;
+    border: 1px solid transparent;
+}
+
+#virtual-keyboard:focus {
+    border-color: #6610f2;
+}
+
+#virtual-keyboard button {
+    font-size: inherit;
+    padding: 8px 24px;
+    margin: 1% 0.5%;
+}
+
+#virtual-keyboard button.inactive {
+    opacity: 0.35;
+    cursor: auto;
+}
+
+#virtual-keyboard button.gueesedLetter {
+    color: #28a745;
+    border-color: #28a745;
+}
+
+#virtual-keyboard button:focus {
+    box-shadow: none;
+}
+
+#virtual-keyboard .key {
+    color: white;
+    border: 1px solid white;
+    border-radius: 0px;
+}
+
+#generated-phrase {
+    padding: 3em;
+    padding-bottom: 2em;
+    font-size: 2rem;
+    color: white;
+}
+
+#generated-phrase .category {
+    font-style: italic;
+}
+
+#generated-phrase .phrase-progress {
+    margin-bottom: 1em;
+}
+
+#generated-phrase .phrase-progress h1 {
+    margin-bottom: 0;
+}
+
+#generated-phrase .phrase-progress span{
+    display: inline-block;
+    margin: 0 0.25em;
+    padding-bottom: 0.15em;
+    min-width: 1em;
+
+    text-align: center;
+    border-bottom: 2px solid white;
+}
+
+#generated-phrase .space-character {
+    visibility: hidden;
+}
+
+#my-lives {
+    max-width: 400px;
+    color: white;
+}
+
+#my-lives i {
+    font-size: 2rem;
+}
+
+@media only screen and (max-width: 1200px) {
+    #my-lives {
+        margin: 0px auto;
+        max-width: 300px;
+    }
+
+    #virtual-keyboard {
+        font-size: 1.5em;
+    }
+
+    #generated-phrase {
+        padding: 1em;
+        padding-top: 2em;
+    }
+
+    #generated-phrase .phrase-progress h1 {
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    #my-lives {
+        max-width: 225px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    #my-lives {
+        max-width: 200px;
+    }
+
+    #generated-phrase .phrase-progress h1 {
+        font-size: 1.5rem;
+    }
+
+    #virtual-keyboard {
+        font-size: 1.25em;
+    }
+}

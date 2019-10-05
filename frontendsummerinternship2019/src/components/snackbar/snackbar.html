@@ -1,0 +1,18 @@
+<div id = "snackbar" class = "alert-info" 
+    @animate = "Open"
+>
+    <div class = "container-fluid">
+        <div class = "row">
+            <div class = "col-8 offset-sm-2 mt-1">
+                <h5 class = "text text-center">{{state.text}}</h5>
+            </div>
+            <div class = "col-1 offset-sm-1 text-center">
+                <i class="material-icons dismiss" 
+                    @click="close()"
+                >
+                    close
+                </i>
+            </div>
+        </div>
+    </div>
+</div>

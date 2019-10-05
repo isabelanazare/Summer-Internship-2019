@@ -1,0 +1,133 @@
+#game-session.container {
+    position: relative;
+    width: 100%;
+    max-width: 2560px;
+    margin: 0;
+    padding: 0;
+}
+
+#game-session .loading-overlay {
+    padding: 100px 0px;
+}
+
+.show_chat {
+    position: fixed;
+    right: 0;
+    height: 100%;
+    width: 50px;
+    background: #151934;
+    transition: width .3s;
+}
+
+.show_chat.inactive {
+    width: 0px;
+}
+
+.show_chat:hover {
+    cursor: pointer;
+}
+
+.show_chat_icon {
+    color: #7e80ae;
+    font-size: 2rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.chat_wrapper {
+    position: fixed;
+    left: 100%;
+    width: 30%;
+    height: 100%;
+    top: 0;
+
+    z-index: 10;
+    transition: left .3s;
+}
+
+.chat_wrapper.active {
+    left: 70%;
+}
+
+.game_wrapper {
+    z-index: 1000;
+    height: 100%;
+    width: calc(100% - 50px);
+    left: 0;
+    transition: width .3s;
+}
+
+.game_wrapper.inactive {
+    width: 70%;
+}
+
+.game_wrapper .loading-overlay{
+    padding: 10em 0;
+    width: 100%;
+}
+
+#mobile-chat-toggle {
+    display: none;
+    position: fixed;
+    right: 2em;
+    bottom: 2em;
+    padding: 1em;
+
+    color: white;
+    background: #151934;
+    border-radius: 4px;
+
+    cursor: pointer;
+}
+
+.my-row {
+    padding: 0;
+    height: 100%;
+    margin: 0;
+}
+
+::-webkit-scrollbar {
+    width: 1px;
+}
+
+#no-game-text{
+    padding: 3em 1em;
+}
+
+@media only screen and (max-width: 992px) {
+    .game_wrapper {
+        width: 100%;
+    }
+
+    .game_wrapper.inactive{
+        width:100%;
+    }
+
+    .chat_wrapper {
+        width: 60%;
+    }
+
+    .chat_wrapper.active {
+        left: 40%;
+    }
+
+    .show_chat {
+        display: none;
+    }
+
+    #mobile-chat-toggle {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .chat_wrapper {
+        width: 90%;
+    }
+
+    .chat_wrapper.active {
+        left: 10%;
+    }
+}

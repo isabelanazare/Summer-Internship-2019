@@ -1,0 +1,47 @@
+@keyframes alertAnimation {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0.01;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+.alert-container {
+    position: fixed !important;
+    right: 1.5em;
+    top: 100%;
+    max-width: calc(100% - 2em);
+
+    font-weight: 600;
+
+    opacity: 0;
+    transition: all .3s ease-in-out;
+}
+
+.alert-container .alert {
+    margin: 0px;
+}
+
+.alert-container.Open {
+    opacity: 1;
+    top: calc(100% - 4.5em);
+}
+/* .alert-container.closed {
+    animation-duration: .2s;
+    animation-name: alertAnimation;
+    animation-fill-mode: forwards;
+    animation-direction: reverse;
+}
+
+.alert-container.open {
+    animation-duration: .4s;
+    animation-name: alertAnimation;
+    animation-fill-mode: forwards;
+} */

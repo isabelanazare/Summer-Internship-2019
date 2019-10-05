@@ -1,0 +1,16 @@
+
+<div
+    class = "content-overlay"
+    @animate = "displayOverlay"    
+>
+
+</div>
+
+<div 
+    class = "container"
+    id = "modal"
+    @animate = "openModal"
+>
+{{{renderComponent 'ModalComponent' params=props}}}
+    
+</div>

@@ -1,0 +1,19 @@
+<div
+    id = "players-list"
+    @animate = "togglePlayersList"    
+>
+    <i 
+        class="material-icons toggler"
+        @click = "togglePlayersList()"
+    >
+        person
+    </i>
+    <div class = "players-container">
+        {{#each props.users}}
+            {{{renderUser this}}}
+        {{else}}
+            <p class = "no-users-text">No others users are connected</p>
+        {{/each}}
+    </div>
+    
+</div>

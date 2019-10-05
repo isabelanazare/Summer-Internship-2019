@@ -1,0 +1,56 @@
+#snackbar {
+    position: fixed;
+    top: -20%;
+    left: 5%;
+    width: 90%;
+    padding: .5em;
+
+    font-weight: bold;
+    border-radius: 4px;
+
+    transition: all .3s ease-out;
+    z-index: 20;
+}
+
+#snackbar.open {
+    top: 1em;
+}
+
+#snackbar .text {
+    white-space: normal;
+    word-break: break-all;
+}
+
+#snackbar .dismiss {
+    /* margin-top: calc(50% - 12px - 0.5em); */
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+@media only screen and (min-width: 576px) {
+    #snackbarl {
+        width: 80%;
+        left: 10%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #snackbar {
+        width: 60%;
+        left: 20%;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #snackbar {
+        width: 50%;
+        left: 25%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #snackbar {
+        width: 40%;
+        left: 30%;
+    }
+}

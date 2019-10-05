@@ -1,0 +1,89 @@
+#login-page {
+    height: 100%;
+    margin: 0px auto !important;
+    padding: 15% 1em;
+
+    background: url("/public/img/Login_images_bg-01.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.title {
+    margin-bottom: 1em;
+}
+
+.login-form-container {
+    position: relative;
+    padding: 1.5em;
+    background: white;
+    border-radius: 0.5em;
+}
+
+.login-form-container .loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 0.5em;
+
+    z-index: 15;
+}
+
+.login-form-container .loader-container {
+    position: relative;
+    top: calc(50% - 2em);
+    width: 2em;
+    height: 2em;
+    margin: 0px auto;
+}
+
+#login-username {
+    border: 1px solid #6c757d !important;
+    outline: 0px solid #6f42c1;
+    box-shadow: 0px 0px 0px 0px #6f42c1 inset;
+
+    transition: all .3s ease-in-out;
+}
+
+#login-username:focus {
+    box-shadow: 0px 0px 5px 1px #6610f2 inset;
+}
+
+#sign-in-button {
+    position: relative;
+    padding: .5em 3em;
+
+    z-index: 1;
+}
+
+#sign-in-button::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: .3rem;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+
+    background: #a64bf4;
+    background: -webkit-linear-gradient(45deg, #3c1ee7, #a64bf4);
+    background: -o-linear-gradient(45deg, #3c1ee7, #a64bf4);
+    background: -moz-linear-gradient(45deg, #3c1ee7, #a64bf4);
+    background: linear-gradient(45deg, #3c1ee7, #a64bf4);
+
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+#sign-in-button:hover:before {
+    opacity: 1;
+}

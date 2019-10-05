@@ -1,0 +1,41 @@
+@keyframes alertAnimation {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0.01;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+.alert-container {
+    /* display: none; */
+    position: absolute;
+    right: 1em;
+    bottom: 1em;
+    max-width: calc(100% - 2em);
+
+    opacity: 0;
+}
+
+.alert-container .alert {
+    margin: 0px;
+}
+
+.alert-container.closed {
+    animation-duration: .2s;
+    animation-name: alertAnimation;
+    animation-fill-mode: forwards;
+    animation-direction: reverse;
+}
+
+.alert-container.open {
+    animation-duration: .4s;
+    animation-name: alertAnimation;
+    animation-fill-mode: forwards;
+}
