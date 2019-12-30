@@ -19,7 +19,7 @@
     "express": "^4.17.1",
     "firebase": "^6.3.5",
     "fs": "0.0.1-security",
-    "handlebars": "^4.1.2",
+    "handlebars": "^4.3.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "serve-static": "^1.14.1",
